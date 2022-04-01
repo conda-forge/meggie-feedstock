@@ -31,10 +31,6 @@ requirements:
 test:
   imports:
     - meggie
-  commands:
-    - pip check
-  requires:
-    - pip
 
 app:
   entry: meggie
