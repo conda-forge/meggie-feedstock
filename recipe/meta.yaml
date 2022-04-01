@@ -24,7 +24,7 @@ requirements:
     - scikit-learn
     - python-json-logger
     - pyqt >=5
-    - numpy ==1.21.2
+    - numpy
     - h5io
 
 test:
