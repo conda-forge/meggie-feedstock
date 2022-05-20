@@ -1,5 +1,5 @@
 {% set name = "meggie" %}
-{% set version = "1.3.3" %}
+{% set version = "1.3.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 082b49bfa0279a0644d9fc266ed67398bda86a661e828a7a68aff996f62bdedb
+  sha256: 0c8c5c037da8f15189fc7e567304bfa8d4950924d4c556f326e5c98c3f4b87c1
 
 build:
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -33,7 +33,7 @@ test:
 
 app:
   entry: meggie
-  summary: "User-friendly graphical user interface to do M/EEG analysis"
+  summary: User-friendly graphical user interface to do M/EEG analysis
   type: desk
 
 about:
@@ -41,7 +41,7 @@ about:
   license: BSD-2-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: "User-friendly graphical user interface to do M/EEG analysis"
+  summary: User-friendly graphical user interface to do M/EEG analysis
 
 extra:
   recipe-maintainers:
