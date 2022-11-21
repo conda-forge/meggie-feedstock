@@ -10,7 +10,7 @@ source:
   sha256: 4fe686461f91ca76fa85e5f059a88e44f902297bcb70c365fc27742c84201000
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -23,7 +23,7 @@ requirements:
     - matplotlib-base
     - scikit-learn
     - python-json-logger
-    - pyqt >=5
+    - pyqt
     - numpy
     - h5io
 
