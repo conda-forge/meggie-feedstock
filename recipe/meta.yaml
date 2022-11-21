@@ -19,7 +19,7 @@ requirements:
     - pip
   run:
     - python
-    - mne >=1.0.0
+    - mne >=1.2.0
     - matplotlib-base
     - scikit-learn
     - python-json-logger
