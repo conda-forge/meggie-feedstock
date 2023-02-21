@@ -10,8 +10,10 @@ source:
   sha256: 583f8a9a5fd8cc6a90d6b4765b638b3602d599d12ba2aeb3f08419c99659d633
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
+  entry_points: 
+    - meggie = meggie.run:main
 
 requirements:
   host:
