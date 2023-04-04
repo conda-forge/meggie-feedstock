@@ -1,5 +1,5 @@
 {% set name = "meggie" %}
-{% set version = "1.4.3" %}
+{% set version = "1.4.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 583f8a9a5fd8cc6a90d6b4765b638b3602d599d12ba2aeb3f08419c99659d633
+  sha256: cc09efc2b834e1b8438910e44b5a202373538c2c7bf4daeba08842c058d04cf1
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   entry_points: 
     - meggie = meggie.run:main
@@ -21,7 +21,7 @@ requirements:
     - pip
   run:
     - python
-    - mne >=1.2.0
+    - mne ==1.2.3
     - matplotlib-base
     - scikit-learn
     - python-json-logger
