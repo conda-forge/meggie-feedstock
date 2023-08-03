@@ -1,5 +1,5 @@
 {% set name = "meggie" %}
-{% set version = "1.5.1" %}
+{% set version = "1.5.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: aa81ecf91396e870908077c394e655203a036a4b9f45fb850490ec9a670908de
+  sha256: 5dd3c358ed649886e3eeb376464e2383b6086ea74b508554df18ccf08ad2d27f
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
-  entry_points: 
+  entry_points:
     - meggie = meggie.run:main
 
 requirements:
