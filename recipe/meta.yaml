@@ -10,7 +10,8 @@ source:
   sha256: 0ce9522da5dfae1396f3dba255998ce614c0c744bdc1fa3ced5a37307d30085a
 
 build:
-  number: 0
+  number: 1
+  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - meggie = meggie.run:main
