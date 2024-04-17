@@ -10,7 +10,7 @@ source:
   sha256: 7fcb593eef41a42bfdb11a67ba3409cee0c9a15ce000069517246d00e78ca31a
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
@@ -29,6 +29,7 @@ requirements:
     - python-json-logger
     - pyqt
     - h5io
+    - appdirs
 
 test:
   imports:
