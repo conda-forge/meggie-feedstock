@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 7fcb593eef41a42bfdb11a67ba3409cee0c9a15ce000069517246d00e78ca31a
 
 build:
-  number: 1
+  number: 2
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
@@ -18,10 +18,10 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - mne ==1.6.1
     - numpy ==1.26.4
     - matplotlib-base ==3.8.3
@@ -32,6 +32,8 @@ requirements:
     - appdirs
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - meggie
 
