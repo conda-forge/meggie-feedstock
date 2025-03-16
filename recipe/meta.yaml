@@ -1,5 +1,5 @@
 {% set name = "meggie" %}
-{% set version = "1.9.0" %}
+{% set version = "1.9.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1acb86914c88098ede48932820933a67d43c2d4e8b6b11efea1171eef8e1bbc1
+  sha256: cabc9e949770b71aa39d7a25ce90fe4fe4ecc248d5401f072283bbb8d859023e
 
 build:
-  number: 8
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
