@@ -1,5 +1,5 @@
 {% set name = "meggie" %}
-{% set version = "1.8.0" %}
+{% set version = "1.9.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7fcb593eef41a42bfdb11a67ba3409cee0c9a15ce000069517246d00e78ca31a
+  sha256: 1acb86914c88098ede48932820933a67d43c2d4e8b6b11efea1171eef8e1bbc1
 
 build:
-  number: 2
+  number: 8
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
@@ -20,11 +20,13 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
+    - setuptools
   run:
     - python >={{ python_min }}
-    - mne ==1.6.1
-    - numpy ==1.26.4
-    - matplotlib-base ==3.8.3
+    - mne ==1.9.0
+    - numpy
+    - matplotlib-base
+    - pandas
     - scikit-learn
     - python-json-logger
     - pyqt
@@ -32,10 +34,14 @@ requirements:
     - appdirs
 
 test:
+  source_files:
+    - meggie
   requires:
     - python {{ python_min }}
-  imports:
-    - meggie
+    - pytest
+    - pytest-qt
+  commands:
+    - pytest -s meggie/actions  # run most tests
 
 app:
   entry: meggie
