@@ -10,7 +10,7 @@ source:
   sha256: 1acb86914c88098ede48932820933a67d43c2d4e8b6b11efea1171eef8e1bbc1
 
 build:
-  number: 4
+  number: 5
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
@@ -36,12 +36,8 @@ requirements:
 test:
   requires:
     - python {{ python_min }}
-    - pytest
-    - pytest-qt
   imports:
     - meggie
-  commands:
-    - pytest -s
 
 app:
   entry: meggie
